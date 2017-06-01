@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>Page Title</title>
+</head>
+<style type="text/css">
+   #image{
+    display:block;
+    width:100%;
+  }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<img id="image" src="https://www.cygnismedia.com/images/post-images/facebook-account-kit/advantages-facebook-account-kit.jpg" width='1400px'>
+<br><br><br>
+<form align="middle">
+    <div class="form-group" style="margin-right:20%;margin-left:20%">
+        <label for="exampleSelect1"><i><b>Which kind of suggestion you want to give us</b></i></label>
+        <select class="form-control" id="exampleSelect1">
+            <option >          Account Kit documents</option>
+            <option>         Account Kit demo code</option>
+            <option>Account Kit demo webpage</option>
+            <option>Any function you want Accout Kit have</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <head>
+        <div><i><b>Feel free to say something</b></i></div>
+    </head>
+</form>
+<div class="fb-comments" data-href="http://127.0.0.1:49697/forum.html" data-numposts="5" style="margin-right:30%;margin-left:20%" data-width="1000"></div>
+</body>
+</html>
