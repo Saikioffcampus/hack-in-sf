@@ -1,0 +1,17 @@
+
+<!-- HTTPS required. HTTP will give a 403 forbidden response -->
+<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+
+<title>AccountKitJS App</title>
+
+
+<body>
+<input value="+1" id="country_code" />
+<input placeholder="phone number" id="phone_number"/>
+<button ng-click="model.smsLogin();">Login via SMS</button>
+<div>OR</div>
+<input placeholder="email" id="email"/>
+<button ng-click="model.emailLogin();">Login via Email</button>
+
+
+</body>

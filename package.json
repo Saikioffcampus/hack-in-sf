@@ -4,15 +4,21 @@
   "description": "Web Dev at Northeastern University",
   "main": "server.js",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "mongoose": "^4.4.15"
+    "mongoose": "^4.4.15",
+    "guid": "0.0.12",
+    "mustache": "^2.2.1",
+    "querystring": "^0.2.0",
+    "request": "^2.69.0",
+    "express-session": "^1.14.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Jose G. Annunziato",
-  "license": "ISC"
+  "author": "Hack",
+  "license": "FB"
 }
