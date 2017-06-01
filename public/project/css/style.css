@@ -30,3 +30,8 @@ input.form-control {
     height: 100%;
 }
 
+#image{
+    display:block;
+    width:100%;
+}
+

@@ -17,6 +17,7 @@ module.exports = function (app, model) {
     const Querystring  = require('querystring');
     var csrf_guid = Guid.raw();
 
+// TODO: validate token in request
     app.use(session({
         secret: 'hello world',
         resave: true,
@@ -24,11 +25,6 @@ module.exports = function (app, model) {
     }));
 
     app.use(cookieParser());
-
-
-////    app.post('/api/project/login',passport.authenticate('local'), login);
-//    app.post('/api/project/checkLogin', checkLogin);
-//    app.post('/api/project/logout', logout);
 
 // In server.js, define the logic to serve your login page
     app.post('/login', function(request, response){
@@ -38,18 +34,8 @@ module.exports = function (app, model) {
         version: account_kit_api_version,
       };
 
-//      var html = Mustache.to_html(loadLogin(), view);
       response.send(view);
     });
-
-    function loadLogin() {
-      return fs.readFileSync('./public/project/views/login.html').toString(); //??TODO
-    }
-
-// Next, in server.js, define the logic to serve a page for a successful login
-//    function loadLoginSuccess() {
-//      return fs.readFileSync('./public/project/views/login_success.html').toString();
-//    }
 
     app.post('/login_success', function(request, response){
       // CSRF check
@@ -79,7 +65,6 @@ module.exports = function (app, model) {
             } else if (respBody.email) {
               view.email_addr = respBody.email.address;
             }
-//            var html = Mustache.to_html(loadLoginSuccess(), view);
             response.send(view);
           });
         });
@@ -91,25 +76,21 @@ module.exports = function (app, model) {
       }
     });
 
-//// suplementary
-//    function login(req, res) {
-//        // console.log(req.user)
-//        // console.log(req.isAuthenticated());
-//        var user = req.user;
-//        res.json(user);
-//    }
-//
-//    function checkLogin(req, res) {
-//        // console.log(req.isAuthenticated());
-//        res.send(req.isAuthenticated() ? req.user : '0');
-//    }
-//
-//    function logout(req, res) {
-//        // console.log("loging out!")
-//        req.logOut();
-//        res.sendStatus(200);
-//    }
 
+// Bad way. TODO: apiRoute or route middleware to protect it
+    app.post("/gen_user", createOrUpdateUser);
+
+    function createOrUpdateUser(request, response) {
+        user = request.body.user;
+        model.UserModel.createUser(user).then(
+            function (user) {
+                response.send(user);
+            },
+            function(err) {
+                res.send(err).sendStatus(400);
+            }
+        )
+    }
 
 
 };
