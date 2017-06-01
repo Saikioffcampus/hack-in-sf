@@ -1,6 +1,14 @@
 (function () {
     angular.module("AK")
         .controller("LoginController", LoginController)
+        .controller("LoginSuccessController", LoginSuccessController)
+
+    function LoginSuccessController($window) {
+        var vm = this;
+        vm.currentUser = JSON.parse($window.localStorage.getItem("currentUser"));
+        console.log("currentUser");
+        console.log(vm.currentUser);
+    }
 
 
     function LoginController($window, LoginService, $location) {
@@ -28,6 +36,8 @@
         if (response.status === "PARTIALLY_AUTHENTICATED") {
           LoginService.login_success(response.code, response.state).success(function(response){
             console.log("success!");
+            userObj = response;
+            $window.localStorage.setItem("currentUser", angular.toJson(userObj));
             $location.url("/login_success");
           })
         } else if (response.status === "NOT_AUTHENTICATED") {

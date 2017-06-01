@@ -39,7 +39,7 @@ Button
   margin: 0 auto;
   padding: 8px;
   width: 80%;
-  max-width: 200px;
+  /*max-width: 300px;*/
   background: #2054c4;
   border-radius: 8px;
   color: #fff;
@@ -58,6 +58,18 @@ Button
 }
 .semi-transparent:focus {
   outline: none;
+}
+.is-pink {
+  background: #87cecb;
+  font-weight: bold;
+  font-family: Impact;
+  font-size: 2.5em;
+}
+.is-pink:hover,
+.is-pink:focus,
+.is-pink:active {
+  background: #87cecb;
+  color: #000;
 }
 
 

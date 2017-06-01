@@ -10,7 +10,9 @@
                 controllerAs: "model"
             })
             .when("/login_success", {
-                templateUrl: "views/login_success.html"
+                templateUrl: "views/login_success.html",
+                controller: "LoginSuccessController",
+                controllerAs: "model"
             })
             .otherwise({
                 redirectTo: '/login'

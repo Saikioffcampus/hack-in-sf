@@ -52,8 +52,6 @@ module.exports = function (app, model) {
 //    }
 
     app.post('/login_success', function(request, response){
-      console.log("in login success");
-      console.log(request.body);
       // CSRF check
       if (request.body.csrf === csrf_guid) {
         var app_access_token = ['AA', app_id, app_secret].join('|');
@@ -62,8 +60,6 @@ module.exports = function (app, model) {
           code: request.body.code,
           access_token: app_access_token
         };
-        console.log("params");
-        console.log(params);
 
         // exchange tokens
         var token_exchange_url = token_exchange_base_url + '?' + Querystring.stringify(params);
