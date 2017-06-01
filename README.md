@@ -1,4 +1,4 @@
-# web-dev-template
+# AK DEMO
 
 1. git clone <repo>
 1. cd <repo>
